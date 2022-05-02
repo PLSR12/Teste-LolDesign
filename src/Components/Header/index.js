@@ -1,24 +1,26 @@
 import React from 'react'
-import './Header.css'
+
+import { ContainerHeader, NavHeader } from './styles'
+
 import logo from '../../assets/logoPB.png'
 
 function Header () {
   return (
-    <div className='header'>
+    <ContainerHeader>
       <div className='image-container'>
-        <img src={logo} />
+        <img src={logo} alt='logo' />
       </div>
-      <nav className='navHeader'>
+      <NavHeader>
         <ul>
           <li>
-            <a href='#'>Planos Telzir</a>
+            <a>Planos Telzir</a>
           </li>
           <li>
-            <a href='#'>Fale conosco</a>
+            <a>Fale conosco</a>
           </li>
         </ul>
-      </nav>
-    </div>
+      </NavHeader>
+    </ContainerHeader>
   )
 }
 
