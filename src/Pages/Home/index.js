@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import './Home.css'
+
+import { Container } from './styles'
+import Header from '../../components/Header'
 
 function Home () {
   const [ligacao, setLigacao] = useState({})
@@ -99,15 +101,14 @@ function Home () {
 
     if (selected !== '011') setSelectValues(['011'])
     else setSelectValues(['016', '017', '018'])
-    console.log(selectValues)
   }
 
   return (
     <>
-      <div className='Container'>
-        <p className='texto'>
-          Aqui você pode calcular o valor das suas ligações e descobrir o quanto
-          vai economizar com nossos planos.
+      <Header />
+      <Container>
+        <p>
+          Compare qual plano é mais vantajoso para você! 
         </p>
         <div className='selectionContainer'>
           <div className='containerDDDorigem'>
@@ -165,9 +166,9 @@ function Home () {
             <label>Informe a duração da chamada em minutos</label>
             <input placeholder='ex: 30' type='number' id='minutos' />
           </div>
-            <button className='botaoCalcular' onClick={calculaValores}>
-              Calcular
-            </button>
+          <button className='botaoCalcular' onClick={calculaValores}>
+            Calcular
+          </button>
         </div>
         <div className='resultados'>
           <table>
@@ -187,7 +188,7 @@ function Home () {
             </tbody>
           </table>
         </div>
-      </div>
+      </Container>
     </>
   )
 }
